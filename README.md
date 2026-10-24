@@ -5,6 +5,7 @@ Kayak Takip uygulamasının indirdiği pist ve teleferik paketleri. Elle düzenl
 
 - `index.json`: merkez listesi (2672 merkez, 2026-10-24)
 - `packs/<id>.json`: merkez başına pistler ve teleferikler
+- `offline-style.json`: uygulamanın çevrimdışı harita indirmelerinde kullandığı stil
 
 ## Lisans
 
