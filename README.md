@@ -1,6 +1,6 @@
-# Cornice – dünya kayak merkezi paketleri
+# Dünya kayak merkezi paketleri
 
-Cornice uygulamasının indirdiği pist ve teleferik paketleri. Elle düzenlenmez;
+Bir kayak uygulamasının indirdiği pist ve teleferik paketleri. Elle düzenlenmez;
 `scripts/world/build-packs.ts` ile OpenSkiData verisinden üretilir.
 
 - `index.json`: merkez listesi (2675 merkez, 2026-10-30)
