@@ -1,9 +1,9 @@
-# Kayak Takip – dünya kayak merkezi paketleri
+# Cornice – dünya kayak merkezi paketleri
 
-Kayak Takip uygulamasının indirdiği pist ve teleferik paketleri. Elle düzenlenmez;
+Cornice uygulamasının indirdiği pist ve teleferik paketleri. Elle düzenlenmez;
 `scripts/world/build-packs.ts` ile OpenSkiData verisinden üretilir.
 
-- `index.json`: merkez listesi (2672 merkez, 2026-10-26)
+- `index.json`: merkez listesi (2675 merkez, 2026-10-30)
 - `packs/<id>.json`: merkez başına pistler ve teleferikler
 - `offline-style.json`: uygulamanın çevrimdışı harita indirmelerinde kullandığı stil
 
