@@ -237,6 +237,8 @@ const TEXTS = {
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
     // Dragging the map stops following; the button brings it back.
     map.on('dragstart', () => setFollow(false));
+    // Opened in a tab or in-app browser that wasn't shown yet, the map starts at 400×300: follow the box's size.
+    if (window.ResizeObserver) new ResizeObserver(() => map.resize()).observe(document.getElementById('map'));
   } catch (e) {
     map = null; // No WebGL: the card still tells where things stand.
   }
