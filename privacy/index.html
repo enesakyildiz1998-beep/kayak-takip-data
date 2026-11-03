@@ -1,0 +1,296 @@
+<!doctype html>
+<!--
+  Cornice privacy policy: published to the world data site as /privacy/ (scripts/site/live-page.ts --publish
+  copies it next to /live/). Turkish and English; the language comes from ?lang=tr|en, else the browser's.
+  Written from a code audit of every data flow (2026-11-03). When a feature starts sending or keeping data
+  differently, update this page and its date.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<title>Cornice — Privacy</title>
+<style>
+  :root {
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #10202e;
+    --muted: #5a6b7a;
+    --brand: #1f6fd1;
+    --line: rgba(16, 32, 46, 0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1620;
+      --card: #16202c;
+      --text: #e8eef4;
+      --muted: #9aabbb;
+      --brand: #5ea2ff;
+      --line: rgba(232, 238, 244, 0.14);
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: max(16px, env(safe-area-inset-top)) 16px 48px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 8px 0 16px; }
+  .brand { font-weight: 700; font-size: 20px; }
+  nav a { display: inline-block; min-height: 44px; line-height: 44px; padding: 0 14px; border-radius: 22px;
+    border: 1px solid var(--line); color: var(--text); text-decoration: none; }
+  nav a[aria-current="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+  h1 { font-size: 28px; line-height: 1.2; margin: 0 0 4px; }
+  .date { color: var(--muted); margin: 0 0 20px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 4px 18px 10px; margin: 12px 0; }
+  h2 { font-size: 19px; margin: 14px 0 6px; }
+  h3 { font-size: 16px; margin: 14px 0 4px; }
+  p, li { overflow-wrap: anywhere; }
+  ul { padding-left: 20px; margin: 6px 0; }
+  li { margin: 4px 0; }
+  .lead { font-size: 17px; }
+  a { color: var(--brand); }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 6px; border-top: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; }
+  .scroll { overflow-x: auto; }
+  article[hidden] { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="brand">Cornice</span>
+    <nav aria-label="Language / Dil">
+      <a href="?lang=tr" data-lang="tr" hreflang="tr">Türkçe</a>
+      <a href="?lang=en" data-lang="en" hreflang="en">English</a>
+    </nav>
+  </header>
+
+  <!-- ─────────────────────────────── Türkçe ─────────────────────────────── -->
+  <article lang="tr" data-lang="tr" hidden>
+    <h1>Gizlilik politikası</h1>
+    <p class="date">Son güncelleme: 3 Kasım 2026</p>
+
+    <section>
+      <h2>Kısaca</h2>
+      <ul class="lead">
+        <li>Hesap yok, reklam yok, analiz ya da izleme aracı yok. Verini satmıyoruz.</li>
+        <li>Kayak günlerin (GPS izin dahil) <strong>yalnızca telefonunda</strong> saklanır.</li>
+        <li>Konumun yalnızca <strong>senin açtığın</strong> özelliklerde başkalarına gider: arkadaş grubu, canlı konum bağlantısı, çocuk modu. Kayıt bitince ya da durunca kaldırılır.</li>
+        <li>Harita, hava durumu ve pist bilgisi için bazı servislere bölge bilgisi gider; adın ya da kimliğin gitmez.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Biz kimiz</h2>
+      <p>Cornice, bir kişinin geliştirdiği hobi amaçlı bir kayak takip uygulamasıdır; bir şirket değildir. Bu politikada “biz”, uygulamanın geliştiricisi demektir. Sorular ve veri talepleri için: <a data-contact href="#">iletişim</a>.</p>
+    </section>
+
+    <section>
+      <h2>Telefonunda kalan veriler</h2>
+      <ul>
+        <li><strong>Kayak günleri:</strong> kayıt sırasında GPS noktaları (zaman, konum, yükseklik, hız, doğruluk), barometre yüksekliği, inişler, hatlar, senin düzeltmelerin ve gün özetleri. Sen silene kadar kalır.</li>
+        <li><strong>Ayarlar ve notlar:</strong> birimler, tema, favori merkezler, sezon hedefi, son harita görünümü gibi.</li>
+        <li><strong>Acil durum kişisi:</strong> yazdığın ya da rehberden seçtiğin tek kişinin adı ve numarası. Hiçbir yere gönderilmez.</li>
+        <li><strong>Teşhis kaydı:</strong> kayıt başlatma, duraklatma, hatalar ve uygulama çökmeleri 30 gün tutulur. Ayarlar’da “Saha testi kaydı”nı açarsan ham GPS okumaları da son 5 gün için tutulur (varsayılan kapalı).</li>
+      </ul>
+      <p>Telefonun yedekleme özelliği (iCloud / Google yedekleme) açıksa, uygulama verilerin telefonun yedeğine dahil olabilir. Bu yedeği Apple ya da Google senin hesabın altında tutar.</p>
+    </section>
+
+    <section>
+      <h2>Senin seçtiğinde paylaşılanlar</h2>
+      <h3>Arkadaşlar haritada (grup)</h3>
+      <p>Bir gruba katılır ya da grup kurarsan, <strong>kayıt sürerken</strong> şu bilgiler gruba gönderilir: grupta görünen adın, konumun (tam GPS), yüksekliğin, hızın ve durumun. Yaklaşık her 1–3 dakikada bir gönderilir. Duraklattığında, kaydı bitirdiğinde ya da “Bugün görünme” dediğinde konumun haritadan kaldırılır.</p>
+      <ul>
+        <li>Grup kodunu bilen herkes son 2 saatteki konumları görebilir. Kodu yalnızca güvendiğin kişilerle paylaş.</li>
+        <li>Bağlantı yoksa kaldırma isteği ulaşmayabilir. O durumda konum 2 saat sonra görünmez olur, 1 günden eski kayıtlar da sunucudan silinir.</li>
+        <li><strong>“Bu hafta” tablosu:</strong> haftalık toplam iniş, gün sayısı ve en yüksek hız (iz yok) gruba gider. 8 haftadan eski kayıtlar silinir.</li>
+        <li><strong>Buluşma noktası:</strong> haritada seçtiğin nokta ve yakınındaki pist ya da hat adı. 12 saat sonra geçersiz olur.</li>
+        <li>Gruptan ayrıldığında konumun, haftalık satırların ve üyelik kaydın hemen silinir. Üyelik kaydı (rastgele kimlik ve şifresinin özeti) aksi halde son görülmenden 1 yıl sonra silinir.</li>
+      </ul>
+      <h3>Canlı konum bağlantısı</h3>
+      <p>Kayıt sırasında bir bağlantı paylaşırsan, bağlantıyı alan herkes adını, konumunu, yüksekliğini, hızını ve durumunu görebilir; uygulama ya da hesap gerekmez. Duraklatınca son konumun “mola” olarak görünmeye devam eder. Kaydı bitirince bağlantı kapanır ve konum silinir. Bağlantı en geç 12 saatte süresi dolar; kayıtlar 2 gün sonra silinir.</p>
+      <h3>Çocuk modu</h3>
+      <p>Çocuk modu, bir ebeveyn ya da veli tarafından çocuğun telefonunda açılmak içindir. Açıkken grup paylaşımına ek olarak “çocuk” rolü ve çocuğun ne zamandan beri hareketsiz olduğu da gruba gider. Ayrıca, konum izni daha önce verilmişse, telefon bir kayak merkezindeyken kayıt günde bir kez kendiliğinden başlar. Ebeveynin numarası yalnızca çocuğun telefonunda acil durum kişisi olarak saklanır. Uyarılar ebeveynin telefonunda yerel bildirim olarak gösterilir.</p>
+      <h3>Dışa aktarma ve paylaşma</h3>
+      <p>Yedek dosyası, GPX, paylaşım görselleri, teşhis dosyası ve SOS mesajı yalnızca sen bir düğmeye basıp nereye gideceğini seçtiğinde telefondan çıkar. SOS SMS’i telefonunun mesaj uygulamasında açılır ve gönder tuşuna sen basarsın; mesajda konumun ve bir Google Haritalar bağlantısı bulunur.</p>
+      <h3>Sağlık uygulamaları</h3>
+      <p>İstersen bir kayak gününü Apple Sağlık ya da Health Connect’e kaydedebilirsin: antrenman, başlangıç/bitiş, her iniş için bir tur, toplam mesafe ve (Health Connect’te) merkezin adı. Rota yazılmaz. “Saatindeki nabzı göster”e basarsan o günün nabız verisi okunur ve yalnızca ekranda gösterilir; saklanmaz ve hiçbir yere gönderilmez. Sağlık verisi reklam ya da başka bir amaçla kullanılmaz.</p>
+    </section>
+
+    <section>
+      <h2>Kullandığımız servisler</h2>
+      <p>Bu servislere yapılan her istekte, internetin doğası gereği telefonunun IP adresi ve standart cihaz bilgileri de gider. Adın, hesabın ya da kayıtların gitmez.</p>
+      <div class="scroll">
+      <table>
+        <tr><th>Servis</th><th>Neden</th><th>Ne gider</th></tr>
+        <tr><td>Supabase (AB bölgesi)</td><td>Grup, canlı bağlantı, çocuk modu (yalnızca açarsan)</td><td>Yukarıda anlatılanlar</td></tr>
+        <tr><td>Open-Meteo</td><td>Hava durumu, kar uyarısı, geçmiş günün havası, 15 günlük ve haftalık tahmin, ayın normalleri</td><td>Yaklaşık 1 km’ye yuvarlanmış konum ve yükseklik; geçmiş gün için tarih</td></tr>
+        <tr><td>OpenStreetMap Overpass (overpass-api.de, overpass.kumi.systems)</td><td>Pist ve telesiyej bilgisi</td><td>Bakılan bölgenin sınırları (yaklaşık 1 km’ye yuvarlanmış)</td></tr>
+        <tr><td>OpenFreeMap</td><td>Harita</td><td>Ekranda görünen harita parçaları</td></tr>
+        <tr><td>AWS Terrain Tiles</td><td>Arazi gölgesi</td><td>Görünen harita parçaları</td></tr>
+        <tr><td>Esri, OpenTopoMap</td><td>Uydu / topoğrafik harita (yalnızca seçersen)</td><td>Görünen harita parçaları</td></tr>
+        <tr><td>GitHub Pages</td><td>Dünya kayak merkezleri listesi, canlı bağlantı sayfası, bu sayfa</td><td>İstenen merkez dosyası</td></tr>
+        <tr><td>Expo (EAS Update)</td><td>Uygulama güncellemeleri</td><td>Kuruluma özel rastgele bir kimlik, sürüm ve platform bilgisi; uygulama açılırken çökme olduysa hata mesajı</td></tr>
+      </table>
+      </div>
+      <p>Canlı bağlantı sayfasını açan kişinin tarayıcısı da harita kütüphanesini unpkg.com’dan, haritayı OpenFreeMap’ten yükler.</p>
+    </section>
+
+    <section>
+      <h2>İzinler</h2>
+      <ul>
+        <li><strong>Konum (tam, arka planda da):</strong> kayıt sırasında inişleri ve hatları ayırt etmek için. Kayıt yokken konum kaydedilmez.</li>
+        <li><strong>Hareket / barometre:</strong> yüksekliği daha doğru ölçmek için.</li>
+        <li><strong>Bildirimler:</strong> yalnızca telefonda oluşturulan bildirimler; uzaktan bildirim yok.</li>
+        <li><strong>Kamera:</strong> yalnızca grup QR kodunu okumak için. Fotoğraf çekilmez, saklanmaz.</li>
+        <li><strong>Kişiler:</strong> yalnızca rehberden seçtiğin tek acil durum kişisinin numarası okunur.</li>
+        <li><strong>Sağlık:</strong> yukarıda anlatıldığı gibi, yalnızca sen istersen.</li>
+      </ul>
+      <p>Saatler (Apple Watch, Wear OS) telefonla doğrudan konuşur; saatte kaydedilen gün yalnızca senin telefonuna aktarılır.</p>
+    </section>
+
+    <section>
+      <h2>Haklarını kullanmak</h2>
+      <ul>
+        <li>Bir günü silmek için gün ekranındaki “Daha fazla” &gt; “Günü sil”. Uygulamayı silmek telefondaki her şeyi siler.</li>
+        <li>Grup verilerini silmek için gruptan ayrıl. Canlı bağlantıyı kapatmak için kaydı bitir ya da “Bağlantıyı kapat”a bas.</li>
+        <li>Verilerinin kopyası için Ayarlar &gt; “Yedeği paylaş”.</li>
+        <li>KVKK, GDPR ya da yaşadığın yerdeki yasalardan doğan haklar (erişim, düzeltme, silme, itiraz) için bize yaz. Hesap olmadığı için sunucudaki bir kaydı bulabilmemiz adına grup kodunu belirtmen gerekebilir. Ayrıca bulunduğun ülkenin veri koruma kurumuna şikâyette bulunabilirsin.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Çocuklar</h2>
+      <p>Cornice bilerek çocuklardan veri toplamaz; çocuk modu, bir ebeveyn ya da velinin kendi çocuğunu takip edebilmesi için onun tarafından açılır. Grup verisi yalnızca o grubun kodunu bilenlere gösterilir.</p>
+    </section>
+
+    <section>
+      <h2>Değişiklikler</h2>
+      <p>Uygulama veri kullanımını değiştirirse bu sayfa ve yukarıdaki tarih güncellenir.</p>
+    </section>
+  </article>
+
+  <!-- ─────────────────────────────── English ─────────────────────────────── -->
+  <article lang="en" data-lang="en" hidden>
+    <h1>Privacy policy</h1>
+    <p class="date">Last updated: 3 November 2026</p>
+
+    <section>
+      <h2>In short</h2>
+      <ul class="lead">
+        <li>No accounts, no ads, no analytics or tracking tools. We don’t sell your data.</li>
+        <li>Your ski days (including the GPS track) are stored <strong>only on your phone</strong>.</li>
+        <li>Your location goes to other people only through features <strong>you turn on</strong>: friends group, live location link, child mode. It is taken off when you pause or finish.</li>
+        <li>Maps, weather and piste data need some services to know the area you look at; your name or identity is not sent.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Who we are</h2>
+      <p>Cornice is a hobby ski-tracking app made by an individual developer, not a company. “We” in this policy means the app’s developer. Questions and data requests: <a data-contact href="#">contact</a>.</p>
+    </section>
+
+    <section>
+      <h2>Data that stays on your phone</h2>
+      <ul>
+        <li><strong>Ski days:</strong> GPS points while recording (time, position, altitude, speed, accuracy), barometric altitude, runs, lifts, your corrections and day summaries. Kept until you delete them.</li>
+        <li><strong>Settings and notes:</strong> units, theme, favourite resorts, season goal, last map view and the like.</li>
+        <li><strong>Emergency contact:</strong> the name and number of the one person you type or pick from your contacts. Never sent anywhere.</li>
+        <li><strong>Diagnostics log:</strong> recording start/pause, errors and app crashes are kept for 30 days. If you turn on “Field-test log” in Settings, raw GPS readings are also kept for the last 5 days (off by default).</li>
+      </ul>
+      <p>If your phone’s backup (iCloud / Google backup) is on, the app’s data may be included in that backup, which Apple or Google keep under your account.</p>
+    </section>
+
+    <section>
+      <h2>Shared when you choose to</h2>
+      <h3>Friends on the map (group)</h3>
+      <p>If you create or join a group, <strong>while you are recording</strong> the app sends the group your display name, your position (full GPS precision), altitude, speed and status, about every 1–3 minutes. When you pause, finish, or choose “Hide today”, your position is taken off the map.</p>
+      <ul>
+        <li>Anyone who knows the group code can see the positions from the last 2 hours. Share the code only with people you trust.</li>
+        <li>Without a connection the take-off request may not arrive. Your position then stops being shown after 2 hours, and records older than 1 day are deleted from the server.</li>
+        <li><strong>“This week” board:</strong> your weekly vertical, number of days and top speed (no track). Rows older than 8 weeks are deleted.</li>
+        <li><strong>Meeting point:</strong> the point you pick on the map and the name of the nearby piste or lift. It expires after 12 hours.</li>
+        <li>Leaving the group deletes your position, weekly rows and membership note at once. Otherwise the membership note (a random id and a hash of its secret) is deleted 1 year after you were last seen.</li>
+      </ul>
+      <h3>Live location link</h3>
+      <p>If you share a link while recording, anyone who has it can see your name, position, altitude, speed and status, with no app or account. During a pause your last position stays visible as “on a break”. Finishing the recording closes the link and deletes the position. A link expires after 12 hours at the latest; its record is deleted 2 days later.</p>
+      <h3>Child mode</h3>
+      <p>Child mode is meant to be turned on by a parent or guardian on the child’s phone. While it is on, the group also receives the “child” role and how long the child has been standing still. And if location permission was already given, recording starts by itself once a day when the phone is at a ski resort. The parent’s number is kept only on the child’s phone, as its emergency contact. Alerts appear on the parent’s phone as local notifications.</p>
+      <h3>Exporting and sharing</h3>
+      <p>Backup files, GPX, share images, the diagnostics file and SOS messages leave your phone only when you press a button and choose where they go. The SOS text opens in your phone’s messaging app and you press send; it contains your position and a Google Maps link.</p>
+      <h3>Health apps</h3>
+      <p>If you choose, a ski day can be saved to Apple Health or Health Connect: a workout, start/end, one lap per run, total distance and (in Health Connect) the resort name. No route is written. If you tap “Show heart rate from your watch”, that day’s heart rate is read and only shown on screen; it is not stored and not sent anywhere. Health data is never used for advertising or any other purpose.</p>
+    </section>
+
+    <section>
+      <h2>Services we use</h2>
+      <p>Every request to these services also carries, as the internet works, your phone’s IP address and standard device information. Your name, an account or your recordings are not sent.</p>
+      <div class="scroll">
+      <table>
+        <tr><th>Service</th><th>Why</th><th>What is sent</th></tr>
+        <tr><td>Supabase (EU region)</td><td>Group, live link, child mode (only if you use them)</td><td>As described above</td></tr>
+        <tr><td>Open-Meteo</td><td>Weather, snow alerts, a past day’s weather, 15-day and weekly forecast, monthly normals</td><td>Position rounded to about 1 km and altitude; the date for a past day</td></tr>
+        <tr><td>OpenStreetMap Overpass (overpass-api.de, overpass.kumi.systems)</td><td>Piste and lift data</td><td>The bounds of the area looked up (rounded to about 1 km)</td></tr>
+        <tr><td>OpenFreeMap</td><td>Map</td><td>The map tiles on screen</td></tr>
+        <tr><td>AWS Terrain Tiles</td><td>Terrain shading</td><td>The map tiles on screen</td></tr>
+        <tr><td>Esri, OpenTopoMap</td><td>Satellite / topographic map (only if you pick it)</td><td>The map tiles on screen</td></tr>
+        <tr><td>GitHub Pages</td><td>World resort list, the live link page, this page</td><td>The resort file requested</td></tr>
+        <tr><td>Expo (EAS Update)</td><td>App updates</td><td>A random id made for this install, version and platform; an error message if the app crashed at launch</td></tr>
+      </table>
+      </div>
+      <p>Someone opening a live link page also loads the map library from unpkg.com and the map from OpenFreeMap in their browser.</p>
+    </section>
+
+    <section>
+      <h2>Permissions</h2>
+      <ul>
+        <li><strong>Location (precise, also in the background):</strong> to tell runs and lifts apart while recording. No location is recorded when you aren’t recording.</li>
+        <li><strong>Motion / barometer:</strong> for more accurate altitude.</li>
+        <li><strong>Notifications:</strong> only notifications made on the phone; no push notifications.</li>
+        <li><strong>Camera:</strong> only to scan a group QR code. No photos are taken or kept.</li>
+        <li><strong>Contacts:</strong> only the number of the one emergency contact you pick is read.</li>
+        <li><strong>Health:</strong> as described above, only when you choose.</li>
+      </ul>
+      <p>Watches (Apple Watch, Wear OS) talk to your phone directly; a day recorded on the watch is transferred only to your phone.</p>
+    </section>
+
+    <section>
+      <h2>Your choices and rights</h2>
+      <ul>
+        <li>Delete a day from its screen: “More” &gt; “Delete day”. Deleting the app deletes everything on the phone.</li>
+        <li>Leave the group to delete your group data. Finish the recording or tap “Turn off link” to close a live link.</li>
+        <li>For a copy of your data: Settings &gt; “Share backup”.</li>
+        <li>For rights under GDPR, Türkiye’s KVKK or your local law (access, correction, deletion, objection), write to us. As there are no accounts, we may need your group code to find a record on the server. You can also complain to your country’s data protection authority.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Children</h2>
+      <p>Cornice does not knowingly collect data from children on its own; child mode is turned on by a parent or guardian so they can follow their own child. Group data is shown only to people who know that group’s code.</p>
+    </section>
+
+    <section>
+      <h2>Changes</h2>
+      <p>If the app starts using data differently, this page and the date above are updated.</p>
+    </section>
+  </article>
+</main>
+<script>
+  // Contact: filled in one place for every language.
+  const CONTACT = 'support@corniceski.com';
+  for (const a of document.querySelectorAll('[data-contact]')) {
+    a.href = `mailto:${CONTACT}`;
+    a.textContent = CONTACT;
+  }
+  const asked = new URLSearchParams(location.search).get('lang');
+  const browser = (navigator.languages || [navigator.language || 'en']).map((l) => String(l).slice(0, 2).toLowerCase());
+  const lang = asked === 'tr' || asked === 'en' ? asked : browser.find((l) => l === 'tr' || l === 'en') || 'en';
+  document.documentElement.lang = lang;
+  for (const el of document.querySelectorAll('article')) el.hidden = el.dataset.lang !== lang;
+  for (const a of document.querySelectorAll('nav a')) a.setAttribute('aria-current', String(a.dataset.lang === lang));
+  document.title = lang === 'tr' ? 'Cornice — Gizlilik' : 'Cornice — Privacy';
+</script>
+</body>
+</html>
