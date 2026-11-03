@@ -2,12 +2,14 @@
 <!--
   Cornice privacy policy: published to the world data site as /privacy/ (scripts/site/live-page.ts --publish
   copies it next to /live/). Turkish and English; the language comes from ?lang=tr|en, else the browser's.
-  Written from a code audit of every data flow (2026-11-03). When a feature starts sending or keeping data
-  differently, update this page and its date.
+  Written from a code audit of every data flow (2026-11-03; optional accounts, cloud backup and friends added
+  from a second audit on 2026-11-04). When a feature starts sending or keeping data differently, update this
+  page and its date.
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="canonical" href="https://corniceski.com/privacy/">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="referrer" content="no-referrer">
 <meta name="color-scheme" content="light dark">
@@ -60,7 +62,7 @@
 <body>
 <main>
   <header>
-    <span class="brand">Cornice</span>
+    <a class="brand" href="https://corniceski.com/" style="color:inherit;text-decoration:none">Cornice</a>
     <nav aria-label="Language / Dil">
       <a href="?lang=tr" data-lang="tr" hreflang="tr">Türkçe</a>
       <a href="?lang=en" data-lang="en" hreflang="en">English</a>
@@ -70,13 +72,14 @@
   <!-- ─────────────────────────────── Türkçe ─────────────────────────────── -->
   <article lang="tr" data-lang="tr" hidden>
     <h1>Gizlilik politikası</h1>
-    <p class="date">Son güncelleme: 3 Kasım 2026</p>
+    <p class="date">Son güncelleme: 4 Kasım 2026</p>
 
     <section>
       <h2>Kısaca</h2>
       <ul class="lead">
-        <li>Hesap yok, reklam yok, analiz ya da izleme aracı yok. Verini satmıyoruz.</li>
-        <li>Kayak günlerin (GPS izin dahil) <strong>yalnızca telefonunda</strong> saklanır.</li>
+        <li>Reklam yok, analiz ya da izleme aracı yok. Verini satmıyoruz.</li>
+        <li>Hesap <strong>isteğe bağlıdır</strong>; uygulama hesapsız da aynı çalışır. Hesap açmazsan sunucuda senin hakkında yalnızca aşağıda anlatılan, senin açtığın özelliklerin gönderdikleri tutulur.</li>
+        <li>Kayak günlerin (GPS izin dahil) <strong>telefonunda</strong> saklanır. Hesap açarsan biten günlerin hesabına da yedeklenir.</li>
         <li>Konumun yalnızca <strong>senin açtığın</strong> özelliklerde başkalarına gider: arkadaş grubu, canlı konum bağlantısı, çocuk modu. Kayıt bitince ya da durunca kaldırılır.</li>
         <li>Harita, hava durumu ve pist bilgisi için bazı servislere bölge bilgisi gider; adın ya da kimliğin gitmez.</li>
       </ul>
@@ -101,12 +104,12 @@
     <section>
       <h2>Senin seçtiğinde paylaşılanlar</h2>
       <h3>Arkadaşlar haritada (grup)</h3>
-      <p>Bir gruba katılır ya da grup kurarsan, <strong>kayıt sürerken</strong> şu bilgiler gruba gönderilir: grupta görünen adın, konumun (tam GPS), yüksekliğin, hızın ve durumun. Yaklaşık her 1–3 dakikada bir gönderilir. Duraklattığında, kaydı bitirdiğinde ya da “Bugün görünme” dediğinde konumun haritadan kaldırılır.</p>
+      <p>Bir gruba katılır ya da grup kurarsan, <strong>kayıt sürerken</strong> şu bilgiler gruba gönderilir: grupta görünen adın, konumun (tam GPS), yüksekliğin ve hızın. Yaklaşık her 1–3 dakikada bir, hareket etmiyorsan 5 dakikada bir gönderilir. Duraklattığında, kaydı bitirdiğinde ya da “Bugün görünme” dediğinde konumun haritadan kaldırılır.</p>
       <ul>
         <li>Grup kodunu bilen herkes son 2 saatteki konumları görebilir. Kodu yalnızca güvendiğin kişilerle paylaş.</li>
         <li>Bağlantı yoksa kaldırma isteği ulaşmayabilir. O durumda konum 2 saat sonra görünmez olur, 1 günden eski kayıtlar da sunucudan silinir.</li>
         <li><strong>“Bu hafta” tablosu:</strong> haftalık toplam iniş, gün sayısı ve en yüksek hız (iz yok) gruba gider. 8 haftadan eski kayıtlar silinir.</li>
-        <li><strong>Buluşma noktası:</strong> haritada seçtiğin nokta ve yakınındaki pist ya da hat adı. 12 saat sonra geçersiz olur.</li>
+        <li><strong>Buluşma noktası:</strong> haritada seçtiğin nokta, yakınındaki pist ya da hat adı ve noktayı koyanın gruptaki adı. 12 saat sonra geçersiz olur.</li>
         <li>Gruptan ayrıldığında konumun, haftalık satırların ve üyelik kaydın hemen silinir. Üyelik kaydı (rastgele kimlik ve şifresinin özeti) aksi halde son görülmenden 1 yıl sonra silinir.</li>
       </ul>
       <h3>Canlı konum bağlantısı</h3>
@@ -120,12 +123,58 @@
     </section>
 
     <section>
+      <h2>Hesap ve bulut yedeği (isteğe bağlı)</h2>
+      <p>Hesap açmak zorunlu değil. Hesap; bulut yedeği, birden fazla telefonda aynı günler ve arkadaşlar içindir. Hesap verileri Supabase’in Avrupa’daki sunucularında tutulur.</p>
+      <h3>Yaş ve çocuklar</h3>
+      <p>Hesap 16 yaş ve üstü içindir. Giriş düğmelerinden önce doğum yılın sorulur. Yalnızca “16 ya da üstü” cevabı ve ne zaman verildiği kaydedilir; doğum yılın saklanmaz. Çocuk modu açık bir telefonda hesaba giriş yapılamaz.</p>
+      <h3>Giriş</h3>
+      <ul>
+        <li><strong>Apple ile ya da Google ile:</strong> giriş, Apple’ın ya da Google’ın kendi penceresinde yapılır; şifren bize gelmez. Supabase’e o servisin hesap kimliğin ve e-posta adresin gelir. Apple ile girerken e-postanı gizlersen Apple’ın yönlendirme adresi gelir. Google ile girersen Google’ın gönderdiği ad ve profil fotoğrafı bağlantısı da hesap bilgilerinde kalır (uygulama fotoğrafı kullanmaz).</li>
+        <li><strong>E-posta kodu:</strong> e-posta adresine 6 haneli bir kod gönderilir (10 dakika geçerli). E-postayı Resend (AB, İrlanda) no-reply@corniceski.com adresinden gönderir. E-postanın dili için uygulamanın dili de hesaba kaydedilir.</li>
+        <li>Oturum, telefonunun güvenli anahtar deposunda saklanır. Telefonda en son hangi yolla girdiğin de not edilir.</li>
+      </ul>
+      <h3>Profil</h3>
+      <p>Bir görünen ad seçersin (1–24 karakter); ilk girişte Apple ya da Google’dan gelen ad önerilir, değiştirebilirsin. Bu ad arkadaşlarına ve hesabının bağlı olduğu gruplarda grup üyelerine görünür.</p>
+      <h3>Bulut yedeği</h3>
+      <p>Giriş yaptığında <strong>biten</strong> kayak günlerin hesabına yedeklenir ve hesabın açık olduğu diğer telefonlarına gelir. Eşitleme uygulama açılınca (en sık 10 dakikada bir), kayıt bitince ve “Şimdi eşitle”ye basınca çalışır.</p>
+      <ul>
+        <li><strong>Giden:</strong> günün GPS noktaları (zaman, konum, yükseklik, doğruluk, hız), günün pist ve hat bilgisi, başlangıç/bitiş saatleri, gün özeti, senin düzeltmelerin ve günün “içe aktarıldı” / “sahte konum” işareti.</li>
+        <li><strong>Gitmeyen:</strong> süren kayıt, sağlık verisi (nabız dahil), acil durum kişisi, ayarlar ve teşhis kaydı.</li>
+        <li>Dosyalar Supabase Storage’da özel bir alanda, yalnızca senin hesabının klasöründe durur. Hesap başına 150 MB yer vardır; dolunca yeni günler yalnızca telefonda kalır.</li>
+        <li>Bir günü sildiğinde buluttan ve diğer telefonlarından da silinir. Diğer telefonlara haber vermek için küçük bir not (gün kimliği, başlangıç ve bitiş saati) hesapta kalır; hesabı silince o da silinir.</li>
+        <li>Telefonda daha önce başka bir hesapla eşitlenmiş günler varsa, yeni hesaba eklenmeden önce sorulur.</li>
+      </ul>
+      <h3>Arkadaşlar</h3>
+      <ul>
+        <li>Arkadaş yalnızca davet bağlantısı ya da QR kodu ile (7 gün geçerli) veya aynı gruptaki, hesabı olan birine istek göndererek eklenir. Arama yoktur, rehberin yüklenmez.</li>
+        <li><strong>Haftalık tablo:</strong> haftalık toplam iniş, gün sayısı ve en yüksek hız (iz yok) hesabına gönderilir. Bunu kimin göreceğini sen seçersin: “Arkadaşlarım” (varsayılan) ya da “Kimse”. 8 haftadan eski satırlar silinir.</li>
+        <li><strong>Gruplar:</strong> girişliyken telefonunun grup üyeliği hesabına bağlanır; gruptakiler grup adın yerine profil adını görür ve sana arkadaşlık isteği gönderebilir. Konum yine telefondan gönderilir; hesap kimliğin grupta gösterilmez. Çıkış yapınca ya da gruptan ayrılınca bu bağ kaldırılır; çıkış anında bağlantı yoksa bağ kalabilir.</li>
+      </ul>
+      <h3>Engelleme ve şikâyet</h3>
+      <ul>
+        <li>Birini engellediğinde ona haber verilmez; arkadaşlığınız biter, birbirinizin isteklerinde, haftalık tablosunda ve girişliyken grup haritasında görünmezsiniz. Grup kodunu bilen biri yine de o grubun konumlarını görebilir; emin olmak için yeni bir grup kur.</li>
+        <li>Şikâyet hesapsız da gönderilebilir. Geliştiriciye şunlar gider: neden (uygunsuz ad, rahatsız etme, hile, başka), şikâyet edilen kişinin o anki adı; gruptan şikâyet edildiyse grup kodu, üye kimliği ve (varsa) hesabı, arkadaş olarak şikâyet edildiyse hesabı; şikâyet edenin hesabı (hesapsızsa grubu). Üç farklı hesap bir hafta içinde aynı adı şikâyet ederse, ad inceleme yapılana kadar gizlenir.</li>
+        <li>Şikâyet kayıtları kendiliğinden silinmez. Kötüye kullanımı sınırlamak için günlük sayaçlar da tutulur; bunlar 2 gün içinde silinir.</li>
+      </ul>
+      <h3>Çıkış yapmak ve hesabı silmek</h3>
+      <ul>
+        <li><strong>Çıkış:</strong> telefondaki günlerin kalır; grup üyeliğin hesapsız devam eder (çıkış anında bağlantı yoksa hesap bağı kalabilir; gruptan ayrılınca kalkar).</li>
+        <li><strong>Hesabı sil</strong> (Ayarlar &gt; Hesap): hesabın, profilin, buluttaki tüm günlerin ve dosyaların, arkadaşlıkların, arkadaşlık isteklerin, engellemelerin ve haftalık toplamların hemen silinir. Apple ile girdiysen ve iPhone’dan siliyorsan, uygulamanın Apple erişimi de iptal edilir; başka bir telefondan silersen bunu Apple Kimliği ayarlarından kendin yapabilirsin. Telefondaki günlerin silinmez.</li>
+        <li><strong>Silmenin kapsamadıkları:</strong> başkalarının senin hakkında yaptığı ve senin yaptığın şikâyetler (hesapla bağı kopar, şikâyet edilen ad ve grup bilgisi kalır); grup üyeliğin (hesapsız olarak, gruptan ayrılana ya da 1 yıl görülmeyene kadar); grup konumları ve canlı bağlantı (yukarıdaki kendi süreleriyle). Supabase’in sistem kayıtları (ör. giriş istekleri ve IP adresi) Supabase’in kısa saklama süresine göre tutulur.</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>Kullandığımız servisler</h2>
-      <p>Bu servislere yapılan her istekte, internetin doğası gereği telefonunun IP adresi ve standart cihaz bilgileri de gider. Adın, hesabın ya da kayıtların gitmez.</p>
+      <p>Bu servislere yapılan her istekte, internetin doğası gereği telefonunun IP adresi ve standart cihaz bilgileri de gider. Hesapla ilgili servisler dışında adın, hesabın ya da kayıtların gitmez.</p>
       <div class="scroll">
       <table>
         <tr><th>Servis</th><th>Neden</th><th>Ne gider</th></tr>
         <tr><td>Supabase (AB bölgesi)</td><td>Grup, canlı bağlantı, çocuk modu (yalnızca açarsan)</td><td>Yukarıda anlatılanlar</td></tr>
+        <tr><td>Supabase Auth ve Storage (AB bölgesi)</td><td>Hesap, bulut yedeği, arkadaşlar (yalnızca hesap açarsan)</td><td>E-posta adresin, giriş yöntemi, görünen ad, biten kayak günlerin ve yukarıdaki hesap bölümünde anlatılanlar</td></tr>
+        <tr><td>Apple (Apple ile giriş)</td><td>Giriş; hesap silinirken erişim iptali</td><td>Giriş Apple’ın penceresinde yapılır. Uygulamaya Apple’dan hesap kimliği, e-posta (gizlenmiş olabilir) ve ilk girişte ad gelir</td></tr>
+        <tr><td>Google (Google ile giriş)</td><td>Giriş</td><td>Giriş Google’ın penceresinde yapılır. Uygulamaya Google’dan hesap kimliği, e-posta, ad ve profil fotoğrafı bağlantısı gelir</td></tr>
+        <tr><td>Resend (AB, İrlanda)</td><td>E-posta ile giriş kodu</td><td>E-posta adresin, 6 haneli kod ve e-postanın dili</td></tr>
         <tr><td>Open-Meteo</td><td>Hava durumu, kar uyarısı, geçmiş günün havası, 15 günlük ve haftalık tahmin, ayın normalleri</td><td>Yaklaşık 1 km’ye yuvarlanmış konum ve yükseklik; geçmiş gün için tarih</td></tr>
         <tr><td>OpenStreetMap Overpass (overpass-api.de, overpass.kumi.systems)</td><td>Pist ve telesiyej bilgisi</td><td>Bakılan bölgenin sınırları (yaklaşık 1 km’ye yuvarlanmış)</td></tr>
         <tr><td>OpenFreeMap</td><td>Harita</td><td>Ekranda görünen harita parçaları</td></tr>
@@ -141,14 +190,14 @@
     <section>
       <h2>İzinler</h2>
       <ul>
-        <li><strong>Konum (tam, arka planda da):</strong> kayıt sırasında inişleri ve hatları ayırt etmek için. Kayıt yokken konum kaydedilmez.</li>
+        <li><strong>Konum (tam, arka planda da):</strong> kayıt sırasında inişleri ve hatları ayırt etmek için. Kayıt yokken konum kaydedilmez. “Kayıt hatırlatması” açıkken (varsayılan olarak açık) telefon yakındaki teleferiklerin alt istasyonları çevresindeki alanları izler; kayıt yokken birine girersen kayda başlamayı önerir. Bunun için GPS açık kalmaz ve konum kaydedilmez.</li>
         <li><strong>Hareket / barometre:</strong> yüksekliği daha doğru ölçmek için.</li>
         <li><strong>Bildirimler:</strong> yalnızca telefonda oluşturulan bildirimler; uzaktan bildirim yok.</li>
-        <li><strong>Kamera:</strong> yalnızca grup QR kodunu okumak için. Fotoğraf çekilmez, saklanmaz.</li>
-        <li><strong>Kişiler:</strong> yalnızca rehberden seçtiğin tek acil durum kişisinin numarası okunur.</li>
+        <li><strong>Kamera:</strong> yalnızca grup ya da arkadaş QR kodunu okumak için. Fotoğraf çekilmez, saklanmaz.</li>
+        <li><strong>Kişiler:</strong> yalnızca rehberden seçtiğin tek acil durum kişisinin adı ve numarası okunur.</li>
         <li><strong>Sağlık:</strong> yukarıda anlatıldığı gibi, yalnızca sen istersen.</li>
       </ul>
-      <p>Saatler (Apple Watch, Wear OS) telefonla doğrudan konuşur; saatte kaydedilen gün yalnızca senin telefonuna aktarılır.</p>
+      <p>Saatte kaydedilen gün yalnızca senin telefonuna aktarılır. Apple Watch telefonla doğrudan konuşur. Wear OS’ta aktarım Google’ın Wear OS veri katmanını kullanır; Bluetooth yoksa Google’ın sunucularından geçebilir.</p>
     </section>
 
     <section>
@@ -156,14 +205,15 @@
       <ul>
         <li>Bir günü silmek için gün ekranındaki “Daha fazla” &gt; “Günü sil”. Uygulamayı silmek telefondaki her şeyi siler.</li>
         <li>Grup verilerini silmek için gruptan ayrıl. Canlı bağlantıyı kapatmak için kaydı bitir ya da “Bağlantıyı kapat”a bas.</li>
+        <li>Hesabın varsa, hesabını ve buluttaki her şeyi Ayarlar &gt; Hesap &gt; “Hesabı sil” ile kendin silebilirsin (yukarıya bak).</li>
         <li>Verilerinin kopyası için Ayarlar &gt; “Yedeği paylaş”.</li>
-        <li>KVKK, GDPR ya da yaşadığın yerdeki yasalardan doğan haklar (erişim, düzeltme, silme, itiraz) için bize yaz. Hesap olmadığı için sunucudaki bir kaydı bulabilmemiz adına grup kodunu belirtmen gerekebilir. Ayrıca bulunduğun ülkenin veri koruma kurumuna şikâyette bulunabilirsin.</li>
+        <li>KVKK, GDPR ya da yaşadığın yerdeki yasalardan doğan haklar (erişim, düzeltme, silme, itiraz) için bize yaz. Hesabın varsa hesabının e-posta adresini yaz. Hesapsız kullanıyorsan, sunucudaki bir kaydı bulabilmemiz için grup kodunu belirtmen gerekebilir. Ayrıca bulunduğun ülkenin veri koruma kurumuna şikâyette bulunabilirsin.</li>
       </ul>
     </section>
 
     <section>
       <h2>Çocuklar</h2>
-      <p>Cornice bilerek çocuklardan veri toplamaz; çocuk modu, bir ebeveyn ya da velinin kendi çocuğunu takip edebilmesi için onun tarafından açılır. Grup verisi yalnızca o grubun kodunu bilenlere gösterilir.</p>
+      <p>Cornice kendiliğinden, bilerek çocuklardan veri toplamaz; çocuk modu, bir ebeveyn ya da velinin kendi çocuğunu takip edebilmesi için onun tarafından açılır. Grup verisi yalnızca o grubun kodunu bilenlere gösterilir. Hesap yalnızca 16 yaş ve üstü içindir; çocuk modu açık bir telefon hesaba bağlanmaz.</p>
     </section>
 
     <section>
@@ -173,15 +223,16 @@
   </article>
 
   <!-- ─────────────────────────────── English ─────────────────────────────── -->
-  <article lang="en" data-lang="en" hidden>
+  <article lang="en" data-lang="en">
     <h1>Privacy policy</h1>
-    <p class="date">Last updated: 3 November 2026</p>
+    <p class="date">Last updated: 4 November 2026</p>
 
     <section>
       <h2>In short</h2>
       <ul class="lead">
-        <li>No accounts, no ads, no analytics or tracking tools. We don’t sell your data.</li>
-        <li>Your ski days (including the GPS track) are stored <strong>only on your phone</strong>.</li>
+        <li>No ads, no analytics or tracking tools. We don’t sell your data.</li>
+        <li>An account is <strong>optional</strong>; the app works the same without one. Without an account, the server keeps nothing about you except what the features you turn on (described below) send.</li>
+        <li>Your ski days (including the GPS track) are stored <strong>on your phone</strong>. If you open an account, your finished days are also backed up to it.</li>
         <li>Your location goes to other people only through features <strong>you turn on</strong>: friends group, live location link, child mode. It is taken off when you pause or finish.</li>
         <li>Maps, weather and piste data need some services to know the area you look at; your name or identity is not sent.</li>
       </ul>
@@ -206,12 +257,12 @@
     <section>
       <h2>Shared when you choose to</h2>
       <h3>Friends on the map (group)</h3>
-      <p>If you create or join a group, <strong>while you are recording</strong> the app sends the group your display name, your position (full GPS precision), altitude, speed and status, about every 1–3 minutes. When you pause, finish, or choose “Hide today”, your position is taken off the map.</p>
+      <p>If you create or join a group, <strong>while you are recording</strong> the app sends the group your display name, your position (full GPS precision), altitude and speed, about every 1–3 minutes (every 5 minutes when you aren’t moving). When you pause, finish, or choose “Hide me today”, your position is taken off the map.</p>
       <ul>
         <li>Anyone who knows the group code can see the positions from the last 2 hours. Share the code only with people you trust.</li>
         <li>Without a connection the take-off request may not arrive. Your position then stops being shown after 2 hours, and records older than 1 day are deleted from the server.</li>
         <li><strong>“This week” board:</strong> your weekly vertical, number of days and top speed (no track). Rows older than 8 weeks are deleted.</li>
-        <li><strong>Meeting point:</strong> the point you pick on the map and the name of the nearby piste or lift. It expires after 12 hours.</li>
+        <li><strong>Meeting point:</strong> the point you pick on the map, the name of the nearby piste or lift, and the group name of whoever set it. It expires after 12 hours.</li>
         <li>Leaving the group deletes your position, weekly rows and membership note at once. Otherwise the membership note (a random id and a hash of its secret) is deleted 1 year after you were last seen.</li>
       </ul>
       <h3>Live location link</h3>
@@ -225,12 +276,58 @@
     </section>
 
     <section>
+      <h2>Account and cloud backup (optional)</h2>
+      <p>You don’t need an account. An account is for cloud backup, the same days on more than one phone, and friends. Account data is kept on Supabase’s servers in Europe.</p>
+      <h3>Age and children</h3>
+      <p>Accounts are for people aged 16 and over. Before the sign-in buttons the app asks your birth year. Only the answer “16 or over” and when it was given are kept; your birth year is not stored. A phone in child mode can’t be signed in.</p>
+      <h3>Signing in</h3>
+      <ul>
+        <li><strong>With Apple or Google:</strong> you sign in on Apple’s or Google’s own screen; your password never reaches us. Supabase receives your account id at that service and your email address. If you hide your email when signing in with Apple, Apple’s relay address is sent instead. If you sign in with Google, the name and profile photo link Google sends are also kept in the account record (the app doesn’t use the photo).</li>
+        <li><strong>Email code:</strong> a 6-digit code is sent to your email address (valid for 10 minutes). The email is sent by Resend (EU, Ireland) from no-reply@corniceski.com. The app’s language is also kept with the account, so the email is in your language.</li>
+        <li>The session is kept in your phone’s secure key storage. The phone also notes which way you signed in last.</li>
+      </ul>
+      <h3>Profile</h3>
+      <p>You choose a display name (1–24 characters); on first sign-in the name from Apple or Google is suggested, and you can change it. Your friends see this name, and so do group members in groups your account is attached to.</p>
+      <h3>Cloud backup</h3>
+      <p>When you are signed in, your <strong>finished</strong> ski days are backed up to your account and appear on your other phones signed in to it. Syncing runs when the app opens (at most every 10 minutes), when a recording finishes and when you tap “Sync now”.</p>
+      <ul>
+        <li><strong>What is sent:</strong> the day’s GPS points (time, position, altitude, accuracy, speed), the day’s piste and lift data, start and end times, the day summary, your corrections and the day’s “imported” / “mock location” marks.</li>
+        <li><strong>What is not sent:</strong> a recording in progress, health data (including heart rate), your emergency contact, settings and the diagnostics log.</li>
+        <li>Files are kept in a private Supabase Storage area, only in your account’s own folder. Each account has 150 MB; when it is full, new days stay only on the phone.</li>
+        <li>Deleting a day also deletes it from the cloud and your other phones. A small note (day id, start and end time) stays in the account so your other phones learn about the deletion; deleting the account removes it too.</li>
+        <li>If the phone already synced days with another account, it asks before adding them to the new one.</li>
+      </ul>
+      <h3>Friends</h3>
+      <ul>
+        <li>Friends are added only with an invite link or QR code (valid for 7 days), or by sending a request to someone with an account in the same group. There is no search and your contacts are not uploaded.</li>
+        <li><strong>Weekly board:</strong> your weekly vertical, number of days and top speed (no track) are sent to your account. You choose who sees them: “My friends” (default) or “Nobody”. Rows older than 8 weeks are deleted.</li>
+        <li><strong>Groups:</strong> while you are signed in, your phone’s group membership is attached to your account; group members see your profile name instead of your group name and can send you a friend request. Your position is still sent by the phone; your account id is not shown in the group. Signing out or leaving the group removes the link; if you are offline when you sign out, it may stay.</li>
+      </ul>
+      <h3>Blocking and reporting</h3>
+      <ul>
+        <li>The person you block is not told; your friendship ends and you stop seeing each other in requests, on the weekly board and on a signed-in group map. Someone who knows the group code can still see that group’s positions; to be sure, start a new group.</li>
+        <li>Reports can be sent without an account too. The developer receives: the reason (inappropriate name, harassment, cheating, other), the reported person’s name at that time; when reported from a group, the group code, their member id and their account if they have one, or their account when reported as a friend; and the reporter’s account (or, without one, their group). If three different accounts report the same name within a week, the name is hidden until it is reviewed.</li>
+        <li>Reports are not deleted automatically. Daily counters are also kept to limit abuse; they are deleted within 2 days.</li>
+      </ul>
+      <h3>Signing out and deleting the account</h3>
+      <ul>
+        <li><strong>Signing out:</strong> the days on your phone stay; your group membership continues without the account (if you are offline at that moment the account link may stay; leaving the group removes it).</li>
+        <li><strong>Delete account</strong> (Settings &gt; Account): your account, profile, all cloud days and files, friendships, friend requests, blocks and weekly totals are deleted at once. If you signed in with Apple and delete from an iPhone, the app’s access to your Apple ID is also revoked; if you delete from another phone, you can do this yourself in your Apple ID settings. The days on your phone are not deleted.</li>
+        <li><strong>What deleting doesn’t cover:</strong> reports others made about you and reports you made (the link to your account is removed, the reported name and group details stay); your group membership (without the account, until you leave the group or aren’t seen for 1 year); group positions and live links (with their own time limits above). Supabase’s system logs (such as sign-in requests and IP addresses) are kept for Supabase’s short log retention.</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>Services we use</h2>
-      <p>Every request to these services also carries, as the internet works, your phone’s IP address and standard device information. Your name, an account or your recordings are not sent.</p>
+      <p>Every request to these services also carries, as the internet works, your phone’s IP address and standard device information. Apart from the account services, your name, your account or your recordings are not sent.</p>
       <div class="scroll">
       <table>
         <tr><th>Service</th><th>Why</th><th>What is sent</th></tr>
         <tr><td>Supabase (EU region)</td><td>Group, live link, child mode (only if you use them)</td><td>As described above</td></tr>
+        <tr><td>Supabase Auth and Storage (EU region)</td><td>Account, cloud backup, friends (only if you open an account)</td><td>Your email address, sign-in method, display name, finished ski days and what the account section above describes</td></tr>
+        <tr><td>Apple (Sign in with Apple)</td><td>Sign-in; revoking access when the account is deleted</td><td>You sign in on Apple’s screen. The app receives your account id, email (may be hidden) and, on first sign-in, your name from Apple</td></tr>
+        <tr><td>Google (Google sign-in)</td><td>Sign-in</td><td>You sign in on Google’s screen. The app receives your account id, email, name and profile photo link from Google</td></tr>
+        <tr><td>Resend (EU, Ireland)</td><td>Email sign-in code</td><td>Your email address, the 6-digit code and the email’s language</td></tr>
         <tr><td>Open-Meteo</td><td>Weather, snow alerts, a past day’s weather, 15-day and weekly forecast, monthly normals</td><td>Position rounded to about 1 km and altitude; the date for a past day</td></tr>
         <tr><td>OpenStreetMap Overpass (overpass-api.de, overpass.kumi.systems)</td><td>Piste and lift data</td><td>The bounds of the area looked up (rounded to about 1 km)</td></tr>
         <tr><td>OpenFreeMap</td><td>Map</td><td>The map tiles on screen</td></tr>
@@ -246,14 +343,14 @@
     <section>
       <h2>Permissions</h2>
       <ul>
-        <li><strong>Location (precise, also in the background):</strong> to tell runs and lifts apart while recording. No location is recorded when you aren’t recording.</li>
+        <li><strong>Location (precise, also in the background):</strong> to tell runs and lifts apart while recording. No location is recorded when you aren’t recording. While “Recording reminder” is on (it is on by default), the phone watches the areas around nearby lift bottom stations and, if you enter one while nothing is recording, suggests starting a recording. GPS doesn’t keep running for this and no location is recorded.</li>
         <li><strong>Motion / barometer:</strong> for more accurate altitude.</li>
         <li><strong>Notifications:</strong> only notifications made on the phone; no push notifications.</li>
-        <li><strong>Camera:</strong> only to scan a group QR code. No photos are taken or kept.</li>
-        <li><strong>Contacts:</strong> only the number of the one emergency contact you pick is read.</li>
+        <li><strong>Camera:</strong> only to scan a group or friend QR code. No photos are taken or kept.</li>
+        <li><strong>Contacts:</strong> only the name and number of the one emergency contact you pick are read.</li>
         <li><strong>Health:</strong> as described above, only when you choose.</li>
       </ul>
-      <p>Watches (Apple Watch, Wear OS) talk to your phone directly; a day recorded on the watch is transferred only to your phone.</p>
+      <p>A day recorded on the watch is transferred only to your phone. Apple Watch talks to your phone directly. On Wear OS the transfer uses Google’s Wear OS data layer, which may go through Google’s servers when Bluetooth isn’t available.</p>
     </section>
 
     <section>
@@ -261,14 +358,15 @@
       <ul>
         <li>Delete a day from its screen: “More” &gt; “Delete day”. Deleting the app deletes everything on the phone.</li>
         <li>Leave the group to delete your group data. Finish the recording or tap “Turn off link” to close a live link.</li>
+        <li>If you have an account, you can delete it and everything in the cloud yourself: Settings &gt; Account &gt; “Delete account” (see above).</li>
         <li>For a copy of your data: Settings &gt; “Share backup”.</li>
-        <li>For rights under GDPR, Türkiye’s KVKK or your local law (access, correction, deletion, objection), write to us. As there are no accounts, we may need your group code to find a record on the server. You can also complain to your country’s data protection authority.</li>
+        <li>For rights under GDPR, Türkiye’s KVKK or your local law (access, correction, deletion, objection), write to us. If you have an account, give us its email address. If you use the app without one, we may need your group code to find a record on the server. You can also complain to your country’s data protection authority.</li>
       </ul>
     </section>
 
     <section>
       <h2>Children</h2>
-      <p>Cornice does not knowingly collect data from children on its own; child mode is turned on by a parent or guardian so they can follow their own child. Group data is shown only to people who know that group’s code.</p>
+      <p>Cornice does not knowingly collect data from children on its own; child mode is turned on by a parent or guardian so they can follow their own child. Group data is shown only to people who know that group’s code. Accounts are for people aged 16 and over only; a phone in child mode can’t be signed in.</p>
     </section>
 
     <section>
