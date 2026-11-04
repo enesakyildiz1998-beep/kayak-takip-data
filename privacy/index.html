@@ -110,10 +110,11 @@
         <li>Bağlantı yoksa kaldırma isteği ulaşmayabilir. O durumda konum 2 saat sonra görünmez olur, 1 günden eski kayıtlar da sunucudan silinir.</li>
         <li><strong>“Bu hafta” tablosu:</strong> haftalık toplam iniş, gün sayısı ve en yüksek hız (iz yok) gruba gider. 8 haftadan eski kayıtlar silinir.</li>
         <li><strong>Buluşma noktası:</strong> haritada seçtiğin nokta, yakınındaki pist ya da hat adı ve noktayı koyanın gruptaki adı. 12 saat sonra geçersiz olur.</li>
-        <li>Gruptan ayrıldığında konumun, haftalık satırların ve üyelik kaydın hemen silinir. Üyelik kaydı (rastgele kimlik ve şifresinin özeti) aksi halde son görülmenden 1 yıl sonra silinir.</li>
+        <li>Gruptan ayrıldığında konumun, haftalık satırların ve üyelik kaydın hemen silinir. Üyelik kaydı (rastgele kimlik ve şifresinin özeti) aksi halde son görülmenden 90 gün sonra silinir.</li>
+        <li>Kötüye kullanımı sınırlamak için, bir telefon bir gruba ilk kez konum gönderdiğinde ya da yeni bir canlı bağlantı açtığında, IP adresinden üretilen ve her gün değişen tek yönlü bir kod sayılır. IP adresinin kendisi saklanmaz; sayaç 2 gün içinde silinir.</li>
       </ul>
       <h3>Canlı konum bağlantısı</h3>
-      <p>Kayıt sırasında bir bağlantı paylaşırsan, bağlantıyı alan herkes adını, konumunu, yüksekliğini, hızını ve durumunu görebilir; uygulama ya da hesap gerekmez. Duraklatınca son konumun “mola” olarak görünmeye devam eder. Kaydı bitirince bağlantı kapanır ve konum silinir. Bağlantı en geç 12 saatte süresi dolar; kayıtlar 2 gün sonra silinir.</p>
+      <p>Kayıt sırasında bir bağlantı paylaşırsan, bağlantıyı alan herkes adını, konumunu, yüksekliğini, hızını ve durumunu görebilir; uygulama ya da hesap gerekmez. Duraklatınca son konumun “mola” olarak görünmeye devam eder. Kaydı bitirince bağlantı kapanır ve konum silinir. Bağlantı en geç 12 saatte süresi dolar ve artık konum göstermez; kayıtlar 2 gün sonra silinir. Yeni bağlantılar yukarıdaki sayaçla sınırlanır.</p>
       <h3>Çocuk modu</h3>
       <p>Çocuk modu, bir ebeveyn ya da veli tarafından çocuğun telefonunda açılmak içindir. Açıkken grup paylaşımına ek olarak “çocuk” rolü ve çocuğun ne zamandan beri hareketsiz olduğu da gruba gider. Ayrıca, konum izni daha önce verilmişse, telefon bir kayak merkezindeyken kayıt günde bir kez kendiliğinden başlar. Ebeveynin numarası yalnızca çocuğun telefonunda acil durum kişisi olarak saklanır. Uyarılar ebeveynin telefonunda yerel bildirim olarak gösterilir.</p>
       <h3>Dışa aktarma ve paylaşma</h3>
@@ -129,7 +130,7 @@
       <p>Hesap 16 yaş ve üstü içindir. Giriş düğmelerinden önce doğum yılın sorulur. Yalnızca “16 ya da üstü” cevabı ve ne zaman verildiği kaydedilir; doğum yılın saklanmaz. Çocuk modu açık bir telefonda hesaba giriş yapılamaz.</p>
       <h3>Giriş</h3>
       <ul>
-        <li><strong>Apple ile ya da Google ile:</strong> giriş, Apple’ın ya da Google’ın kendi penceresinde yapılır; şifren bize gelmez. Supabase’e o servisin hesap kimliğin ve e-posta adresin gelir. Apple ile girerken e-postanı gizlersen Apple’ın yönlendirme adresi gelir. Google ile girersen Google’ın gönderdiği ad ve profil fotoğrafı bağlantısı da hesap bilgilerinde kalır (uygulama fotoğrafı kullanmaz).</li>
+        <li><strong>Apple ile ya da Google ile:</strong> giriş, Apple’ın ya da Google’ın kendi penceresinde yapılır; şifren bize gelmez. Supabase’e o servisin hesap kimliğin ve e-posta adresin gelir. Apple ile girerken e-postanı gizlersen Apple’ın yönlendirme adresi gelir. Google’ın gönderdiği ad ve profil fotoğrafı bağlantısı hesap bilgilerinde tutulmaz, sunucuya gelirken silinir; ad yalnızca telefonda, görünen ad önerisi olarak kullanılır.</li>
         <li><strong>E-posta kodu:</strong> e-posta adresine 6 haneli bir kod gönderilir (10 dakika geçerli). E-postayı Resend (AB, İrlanda) no-reply@corniceski.com adresinden gönderir. E-postanın dili için uygulamanın dili de hesaba kaydedilir.</li>
         <li>Oturum, telefonunun güvenli anahtar deposunda saklanır. Telefonda en son hangi yolla girdiğin de not edilir.</li>
       </ul>
@@ -141,26 +142,26 @@
         <li><strong>Giden:</strong> günün GPS noktaları (zaman, konum, yükseklik, doğruluk, hız), günün pist ve hat bilgisi, başlangıç/bitiş saatleri, gün özeti, senin düzeltmelerin ve günün “içe aktarıldı” / “sahte konum” işareti.</li>
         <li><strong>Gitmeyen:</strong> süren kayıt, sağlık verisi (nabız dahil), acil durum kişisi, ayarlar ve teşhis kaydı.</li>
         <li>Dosyalar Supabase Storage’da özel bir alanda, yalnızca senin hesabının klasöründe durur. Hesap başına 150 MB yer vardır; dolunca yeni günler yalnızca telefonda kalır.</li>
-        <li>Bir günü sildiğinde buluttan ve diğer telefonlarından da silinir. Diğer telefonlara haber vermek için küçük bir not (gün kimliği, başlangıç ve bitiş saati) hesapta kalır; hesabı silince o da silinir.</li>
+        <li>Bir günü sildiğinde buluttan ve diğer telefonlarından da silinir. Diğer telefonlara haber vermek için hesapta yalnızca günün kimliği kalır (kimlik, günün başladığı anı içerir); hesabı silince o da silinir.</li>
         <li>Telefonda daha önce başka bir hesapla eşitlenmiş günler varsa, yeni hesaba eklenmeden önce sorulur.</li>
       </ul>
       <h3>Arkadaşlar</h3>
       <ul>
         <li>Arkadaş yalnızca davet bağlantısı ya da QR kodu ile (7 gün geçerli) veya aynı gruptaki, hesabı olan birine istek göndererek eklenir. Arama yoktur, rehberin yüklenmez.</li>
-        <li><strong>Haftalık tablo:</strong> haftalık toplam iniş, gün sayısı ve en yüksek hız (iz yok) hesabına gönderilir. Bunu kimin göreceğini sen seçersin: “Arkadaşlarım” (varsayılan) ya da “Kimse”. 8 haftadan eski satırlar silinir.</li>
-        <li><strong>Gruplar:</strong> girişliyken telefonunun grup üyeliği hesabına bağlanır; gruptakiler grup adın yerine profil adını görür ve sana arkadaşlık isteği gönderebilir. Konum yine telefondan gönderilir; hesap kimliğin grupta gösterilmez. Çıkış yapınca ya da gruptan ayrılınca bu bağ kaldırılır; çıkış anında bağlantı yoksa bağ kalabilir.</li>
+        <li><strong>Haftalık tablo:</strong> haftalık toplam iniş, gün sayısı ve en yüksek hız (iz yok) hesabına gönderilir. <strong>Varsayılan olarak arkadaşların görür</strong> (“Arkadaşlarım”); “Arkadaşlarım” ekranındaki “Haftalık toplamlarımı kimler görsün” ayarını “Kimse” yaparsan yalnızca sen görürsün. 8 haftadan eski satırlar silinir.</li>
+        <li><strong>Gruplar:</strong> girişliyken telefonunun grup üyeliği hesabına bağlanır; gruptakiler grup adın yerine profil adını görür ve sana arkadaşlık isteği gönderebilir. Konum yine telefondan gönderilir; hesap kimliğin grupta gösterilmez. Çıkış yapınca ya da gruptan ayrılınca bu bağ kaldırılır; çıkış anında bağlantı yoksa, uygulama bağlantı bulduğu ilk açılışta kaldırır.</li>
       </ul>
       <h3>Engelleme ve şikâyet</h3>
       <ul>
         <li>Birini engellediğinde ona haber verilmez; arkadaşlığınız biter, birbirinizin isteklerinde, haftalık tablosunda ve girişliyken grup haritasında görünmezsiniz. Grup kodunu bilen biri yine de o grubun konumlarını görebilir; emin olmak için yeni bir grup kur.</li>
-        <li>Şikâyet hesapsız da gönderilebilir. Geliştiriciye şunlar gider: neden (uygunsuz ad, rahatsız etme, hile, başka), şikâyet edilen kişinin o anki adı; gruptan şikâyet edildiyse grup kodu, üye kimliği ve (varsa) hesabı, arkadaş olarak şikâyet edildiyse hesabı; şikâyet edenin hesabı (hesapsızsa grubu). Üç farklı hesap bir hafta içinde aynı adı şikâyet ederse, ad inceleme yapılana kadar gizlenir.</li>
-        <li>Şikâyet kayıtları kendiliğinden silinmez. Kötüye kullanımı sınırlamak için günlük sayaçlar da tutulur; bunlar 2 gün içinde silinir.</li>
+        <li>Şikâyet hesapsız da gönderilebilir. Geliştiriciye şunlar gider: neden (uygunsuz ad, rahatsız etme, hile, başka), şikâyet edilen kişinin o anki adı; gruptan şikâyet edildiyse grup kodu, üye kimliği ve (varsa) hesabı, arkadaş olarak şikâyet edildiyse hesabı; şikâyet edenin hesabı (hesapsızsa grubu). Kişiyle aynı grupta olan ya da arkadaşı olan, en az 3 günlük üç farklı hesap bir hafta içinde aynı adı şikâyet ederse, ad inceleme yapılana kadar gizlenir.</li>
+        <li>Şikâyet kayıtları 180 gün sonra silinir; bir kişi hakkındaki şikâyetler, o kişinin hesabı silinince silinir. Kötüye kullanımı sınırlamak için günlük sayaçlar da tutulur; bunlar 2 gün içinde silinir.</li>
       </ul>
       <h3>Çıkış yapmak ve hesabı silmek</h3>
       <ul>
-        <li><strong>Çıkış:</strong> telefondaki günlerin kalır; grup üyeliğin hesapsız devam eder (çıkış anında bağlantı yoksa hesap bağı kalabilir; gruptan ayrılınca kalkar).</li>
+        <li><strong>Çıkış:</strong> telefondaki günlerin kalır; grup üyeliğin hesapsız devam eder (çıkış anında bağlantı yoksa hesap bağı, uygulama bağlantı bulduğu ilk açılışta kalkar).</li>
         <li><strong>Hesabı sil</strong> (Ayarlar &gt; Hesap): hesabın, profilin, buluttaki tüm günlerin ve dosyaların, arkadaşlıkların, arkadaşlık isteklerin, engellemelerin ve haftalık toplamların hemen silinir. Apple ile girdiysen ve iPhone’dan siliyorsan, uygulamanın Apple erişimi de iptal edilir; başka bir telefondan silersen bunu Apple Kimliği ayarlarından kendin yapabilirsin. Telefondaki günlerin silinmez.</li>
-        <li><strong>Silmenin kapsamadıkları:</strong> başkalarının senin hakkında yaptığı ve senin yaptığın şikâyetler (hesapla bağı kopar, şikâyet edilen ad ve grup bilgisi kalır); grup üyeliğin (hesapsız olarak, gruptan ayrılana ya da 1 yıl görülmeyene kadar); grup konumları ve canlı bağlantı (yukarıdaki kendi süreleriyle). Supabase’in sistem kayıtları (ör. giriş istekleri ve IP adresi) Supabase’in kısa saklama süresine göre tutulur.</li>
+        <li><strong>Silmenin kapsamadıkları:</strong> senin yaptığın şikâyetler (hesapla bağı kopar, 180 gün sonra silinir; senin hakkındaki şikâyetler ise hesabınla birlikte silinir); grup üyeliğin (hesapsız olarak, gruptan ayrılana ya da 90 gün görülmeyene kadar); grup konumları ve canlı bağlantı (yukarıdaki kendi süreleriyle). Supabase’in sistem kayıtları (ör. giriş istekleri ve IP adresi) Supabase’in kısa saklama süresine göre tutulur.</li>
       </ul>
     </section>
 
@@ -263,10 +264,11 @@
         <li>Without a connection the take-off request may not arrive. Your position then stops being shown after 2 hours, and records older than 1 day are deleted from the server.</li>
         <li><strong>“This week” board:</strong> your weekly vertical, number of days and top speed (no track). Rows older than 8 weeks are deleted.</li>
         <li><strong>Meeting point:</strong> the point you pick on the map, the name of the nearby piste or lift, and the group name of whoever set it. It expires after 12 hours.</li>
-        <li>Leaving the group deletes your position, weekly rows and membership note at once. Otherwise the membership note (a random id and a hash of its secret) is deleted 1 year after you were last seen.</li>
+        <li>Leaving the group deletes your position, weekly rows and membership note at once. Otherwise the membership note (a random id and a hash of its secret) is deleted 90 days after you were last seen.</li>
+        <li>To limit abuse, when a phone first posts to a group or opens a new live link, a one-way code made from its IP address, which changes every day, is counted. The IP address itself is not stored; the counter is deleted within 2 days.</li>
       </ul>
       <h3>Live location link</h3>
-      <p>If you share a link while recording, anyone who has it can see your name, position, altitude, speed and status, with no app or account. During a pause your last position stays visible as “on a break”. Finishing the recording closes the link and deletes the position. A link expires after 12 hours at the latest; its record is deleted 2 days later.</p>
+      <p>If you share a link while recording, anyone who has it can see your name, position, altitude, speed and status, with no app or account. During a pause your last position stays visible as “on a break”. Finishing the recording closes the link and deletes the position. A link expires after 12 hours at the latest and then shows no position; its record is deleted 2 days later. New links are limited by the counter above.</p>
       <h3>Child mode</h3>
       <p>Child mode is meant to be turned on by a parent or guardian on the child’s phone. While it is on, the group also receives the “child” role and how long the child has been standing still. And if location permission was already given, recording starts by itself once a day when the phone is at a ski resort. The parent’s number is kept only on the child’s phone, as its emergency contact. Alerts appear on the parent’s phone as local notifications.</p>
       <h3>Exporting and sharing</h3>
@@ -282,7 +284,7 @@
       <p>Accounts are for people aged 16 and over. Before the sign-in buttons the app asks your birth year. Only the answer “16 or over” and when it was given are kept; your birth year is not stored. A phone in child mode can’t be signed in.</p>
       <h3>Signing in</h3>
       <ul>
-        <li><strong>With Apple or Google:</strong> you sign in on Apple’s or Google’s own screen; your password never reaches us. Supabase receives your account id at that service and your email address. If you hide your email when signing in with Apple, Apple’s relay address is sent instead. If you sign in with Google, the name and profile photo link Google sends are also kept in the account record (the app doesn’t use the photo).</li>
+        <li><strong>With Apple or Google:</strong> you sign in on Apple’s or Google’s own screen; your password never reaches us. Supabase receives your account id at that service and your email address. If you hide your email when signing in with Apple, Apple’s relay address is sent instead. The name and profile photo link Google sends are not kept in the account record: they are removed as they reach the server, and the name is only used on the phone to suggest your display name.</li>
         <li><strong>Email code:</strong> a 6-digit code is sent to your email address (valid for 10 minutes). The email is sent by Resend (EU, Ireland) from no-reply@corniceski.com. The app’s language is also kept with the account, so the email is in your language.</li>
         <li>The session is kept in your phone’s secure key storage. The phone also notes which way you signed in last.</li>
       </ul>
@@ -294,26 +296,26 @@
         <li><strong>What is sent:</strong> the day’s GPS points (time, position, altitude, accuracy, speed), the day’s piste and lift data, start and end times, the day summary, your corrections and the day’s “imported” / “mock location” marks.</li>
         <li><strong>What is not sent:</strong> a recording in progress, health data (including heart rate), your emergency contact, settings and the diagnostics log.</li>
         <li>Files are kept in a private Supabase Storage area, only in your account’s own folder. Each account has 150 MB; when it is full, new days stay only on the phone.</li>
-        <li>Deleting a day also deletes it from the cloud and your other phones. A small note (day id, start and end time) stays in the account so your other phones learn about the deletion; deleting the account removes it too.</li>
+        <li>Deleting a day also deletes it from the cloud and your other phones. Only the day’s id stays in the account so your other phones learn about the deletion (the id contains the moment the day started); deleting the account removes it too.</li>
         <li>If the phone already synced days with another account, it asks before adding them to the new one.</li>
       </ul>
       <h3>Friends</h3>
       <ul>
         <li>Friends are added only with an invite link or QR code (valid for 7 days), or by sending a request to someone with an account in the same group. There is no search and your contacts are not uploaded.</li>
-        <li><strong>Weekly board:</strong> your weekly vertical, number of days and top speed (no track) are sent to your account. You choose who sees them: “My friends” (default) or “Nobody”. Rows older than 8 weeks are deleted.</li>
-        <li><strong>Groups:</strong> while you are signed in, your phone’s group membership is attached to your account; group members see your profile name instead of your group name and can send you a friend request. Your position is still sent by the phone; your account id is not shown in the group. Signing out or leaving the group removes the link; if you are offline when you sign out, it may stay.</li>
+        <li><strong>Weekly board:</strong> your weekly vertical, number of days and top speed (no track) are sent to your account. <strong>By default your friends see them</strong> (“My friends”); set “Who can see my weekly totals” on the “My friends” screen to “Nobody” and only you see them. Rows older than 8 weeks are deleted.</li>
+        <li><strong>Groups:</strong> while you are signed in, your phone’s group membership is attached to your account; group members see your profile name instead of your group name and can send you a friend request. Your position is still sent by the phone; your account id is not shown in the group. Signing out or leaving the group removes the link; if you are offline when you sign out, the app removes it the first time it opens with a connection.</li>
       </ul>
       <h3>Blocking and reporting</h3>
       <ul>
         <li>The person you block is not told; your friendship ends and you stop seeing each other in requests, on the weekly board and on a signed-in group map. Someone who knows the group code can still see that group’s positions; to be sure, start a new group.</li>
-        <li>Reports can be sent without an account too. The developer receives: the reason (inappropriate name, harassment, cheating, other), the reported person’s name at that time; when reported from a group, the group code, their member id and their account if they have one, or their account when reported as a friend; and the reporter’s account (or, without one, their group). If three different accounts report the same name within a week, the name is hidden until it is reviewed.</li>
-        <li>Reports are not deleted automatically. Daily counters are also kept to limit abuse; they are deleted within 2 days.</li>
+        <li>Reports can be sent without an account too. The developer receives: the reason (inappropriate name, harassment, cheating, other), the reported person’s name at that time; when reported from a group, the group code, their member id and their account if they have one, or their account when reported as a friend; and the reporter’s account (or, without one, their group). If three different accounts, each at least 3 days old and in a group with the person or their friend, report the same name within a week, the name is hidden until it is reviewed.</li>
+        <li>Reports are deleted after 180 days; reports about a person are deleted when their account is deleted. Daily counters are also kept to limit abuse; they are deleted within 2 days.</li>
       </ul>
       <h3>Signing out and deleting the account</h3>
       <ul>
-        <li><strong>Signing out:</strong> the days on your phone stay; your group membership continues without the account (if you are offline at that moment the account link may stay; leaving the group removes it).</li>
+        <li><strong>Signing out:</strong> the days on your phone stay; your group membership continues without the account (if you are offline at that moment, the account link is removed the first time the app opens with a connection).</li>
         <li><strong>Delete account</strong> (Settings &gt; Account): your account, profile, all cloud days and files, friendships, friend requests, blocks and weekly totals are deleted at once. If you signed in with Apple and delete from an iPhone, the app’s access to your Apple ID is also revoked; if you delete from another phone, you can do this yourself in your Apple ID settings. The days on your phone are not deleted.</li>
-        <li><strong>What deleting doesn’t cover:</strong> reports others made about you and reports you made (the link to your account is removed, the reported name and group details stay); your group membership (without the account, until you leave the group or aren’t seen for 1 year); group positions and live links (with their own time limits above). Supabase’s system logs (such as sign-in requests and IP addresses) are kept for Supabase’s short log retention.</li>
+        <li><strong>What deleting doesn’t cover:</strong> reports you made (the link to your account is removed; they are deleted after 180 days; reports about you are deleted with your account); your group membership (without the account, until you leave the group or aren’t seen for 90 days); group positions and live links (with their own time limits above). Supabase’s system logs (such as sign-in requests and IP addresses) are kept for Supabase’s short log retention.</li>
       </ul>
     </section>
 
