@@ -3,7 +3,7 @@
 Bir kayak uygulamasının indirdiği pist ve teleferik paketleri. Elle düzenlenmez;
 `scripts/world/build-packs.ts` ile OpenSkiData verisinden üretilir.
 
-- `index.json`: merkez listesi (2675 merkez, 2026-10-30)
+- `index.json`: merkez listesi (2679 merkez, 2026-11-16)
 - `packs/<id>.json`: merkez başına pistler ve teleferikler
 - `offline-style.json`: uygulamanın çevrimdışı harita indirmelerinde kullandığı stil
 
